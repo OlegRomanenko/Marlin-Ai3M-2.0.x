@@ -28,21 +28,28 @@
   #define SHORT_BUILD_VERSION "2.0.5.3"
 #endif
 
-  /**
-   * Verbose version identifier which should contain a reference to the location
-   * from where the binary was downloaded or the source code was compiled.
-   */
+/**
+ * Verbose version identifier containing a unique identifier, such as the
+ * vendor name, download location, GitHub account, etc.
+ */
+#ifndef DETAILED_BUILD_VERSION
   #define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " (davidramiro, Github)"
+#endif
+
+/**
+ * The STRING_DISTRIBUTION_DATE represents when the binary file was built,
+ * here we define this default string as the date where the latest release
+ * version was tagged.
+ */
+#ifndef STRING_DISTRIBUTION_DATE
+  #define STRING_DISTRIBUTION_DATE "2020-06-29"
+#endif
 
 /**
  * Defines the version of the Marlin-AI3M build. Not to be confused with
  * Marlin's own build number, e.g. 2.0.x.
  */
  #define CUSTOM_BUILD_VERSION "v2.0.1"
-
-#ifndef STRING_DISTRIBUTION_DATE
-  #define STRING_DISTRIBUTION_DATE "2020-03-31"
-#endif
 
 /**
  * Minimum Configuration.h and Configuration_adv.h file versions.
@@ -79,7 +86,7 @@
    * has a distinct Github fork— the Source Code URL should just be the main
    * Marlin repository.
    */
-  #define SOURCE_CODE_URL "https://github.com/davidramiro/Marlin-Ai3M-2.0.x"
+  #define SOURCE_CODE_URL "https://github.com/OlegRomanenko/Marlin-Ai3M-2.0.x"
 
 /**
  * Default generic printer UUID.
